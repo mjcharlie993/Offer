@@ -23,8 +23,8 @@ CMyString& CMyString::operator=(const CMyString& rhs)
 }
 ```
 ## 高级解法
-        在经典解法中在分配内存前先用delete释放了实例m_pData的内存。如果此时内存不足会导致new char抛出异常，m_pData将是一个空指针，这样很容易造成程序崩溃。
-        为了保证异常安全性，我们先创建一个临时实例，再交换临时实例和原来的实例。
+>> 在经典解法中在分配内存前先用delete释放了实例m_pData的内存。如果此时内存不足会导致new char抛出异常，m_pData将是一个空指针，这样很容易造成程序崩溃。
+>> 为了保证异常安全性，我们先创建一个临时实例，再交换临时实例和原来的实例。
 * 考虑异常安全性，在分配内存成功后再释放原来的内存
 ```C++
 CMyString& CMyString::operator=(const CMyString& rhs)
