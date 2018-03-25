@@ -75,6 +75,21 @@ long long Fibonacci(unsigned int n)
 }
 
 // ------------------------------------------------------------
+int jumpFloor(int number) {
+    int result[3] = {0, 1, 2};
+    if (number < 3)
+        return result[number];
+    int a = 2, b = 1;
+    int res = 0;
+    for (int i = 3; i <= number; ++i)
+    {
+        res = a + b;
+        b = a;
+        a = res;
+    }
+    return res;
+}
+// ------------------------------------------------------------
 long long result(unsigned int n)
 {
     int ret = 1;
