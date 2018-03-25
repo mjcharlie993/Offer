@@ -37,7 +37,7 @@ int MinInOrder(int* numbers, int index1, int index2)
     int result = numbers[index1];
     for (int i = index + 1; i <= index2; ++i)
     {
-        if (result > numbers[i])
+        if (result > numbers[i]) 
             result = numbers[i];
     }
     return result;
