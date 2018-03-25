@@ -1,3 +1,4 @@
+// Recursive
 long long Fibonacci(unsigned int n)
 {
     if (n <= 0)
@@ -7,6 +8,7 @@ long long Fibonacci(unsigned int n)
     return Fibonacci(n - 1) + Fibonacci(n - 2);
 }
 
+// Iterative
 // time: O(N)
 long long Fibonacci(unsigned int n)
 {
@@ -70,4 +72,34 @@ long long Fibonacci(unsigned int n)
         return result[n];
     Matrix2By2 PowerNMinus2 = MatrixPower(n - 1);
     return PowerNMinus2.m_00;
+}
+
+// ------------------------------------------------------------
+long long result(unsigned int n)
+{
+    int ret = 1;
+    for (int i = 2; i <= n; ++i)
+    {
+        ret *= 2;
+    }
+    return ret;
+}
+
+// ------------------------------------------------------------
+int cover(unsigned int n)
+{
+    if (n == 1)
+        return 1;
+    if (n == 2)
+        return 2;
+    int a = 2;
+    int b = 1;
+    int res = 0;
+    for (int i = 3; i <= n; ++i)
+    {
+        res = a + b;
+        b = a;
+        a = res;
+    }
+    return res;
 }
