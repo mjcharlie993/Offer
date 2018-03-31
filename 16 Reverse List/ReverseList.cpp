@@ -20,3 +20,21 @@ ListNode* ReverseList(ListNode* pHead)
     }
     return pReversedHead;
 }
+
+
+class Solution {
+public:
+    ListNode* ReverseList(ListNode* pHead) {
+        if (pHead == NULL || pHead->next == NULL)
+        {
+            return pHead;
+        }
+        else
+        {
+            ListNode* pNewNode = ReverseList(pHead->next);
+            pHead->next->next = pHead;
+            pHead->next = NULL;
+            return pNewNode;
+        }
+    }
+};

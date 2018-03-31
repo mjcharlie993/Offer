@@ -10,6 +10,7 @@
 * 反转结束后返回原始链表的尾结点（当前处理结点的下一个结点为空）
 
 ## 参考代码
+* 迭代
 ```C++
 ListNode* ReverseList(ListNode* pHead)
 {
@@ -26,5 +27,21 @@ ListNode* ReverseList(ListNode* pHead)
         pNode = pNext;
     }
     return pReversedHead;
+}
+```
+* 递归
+```C++
+ListNode* ReverseList(ListNode* pHead) {
+    if (pHead == NULL || pHead->next == NULL)
+    {
+        return pHead;
+    }
+    else
+    {
+        ListNode* pNewNode = ReverseList(pHead->next);
+        pHead->next->next = pHead;
+        pHead->next = NULL;
+        return pNewNode;
+    }
 }
 ```
