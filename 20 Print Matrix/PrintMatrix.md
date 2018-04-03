@@ -26,7 +26,7 @@ void PrintMatrixInCircle(int** numbers, int columns, int rows, int start)
 {
     int endX = columns - 1 - start;
     int endY = rows - 1 -start;
-    for (int i = 0; i <= endX; ++i)
+    for (int i = start; i <= endX; ++i)
     {
         int number = numbers[start][i];
         printNumber(number);
