@@ -25,7 +25,7 @@ bool isPopOrder(const int* pPush, const int* pPop, int nLength)
                 pNextPush++;
             }
 
-            if (stackData.top() != pNextPop)
+            if (stackData.top() != *pNextPop)
                 break;
             stackData.pop();
             pNextPop++;
