@@ -39,10 +39,12 @@ string delete_solution(string str1, string str2)
 	if (str1.empty())
 		return "";
 	unordered_set<char> s(str2.begin(), str2.end());
-	for (auto iter = str1.begin(); iter != str1.end(); ++iter)
+	for (auto iter = str1.begin(); iter != str1.end();)
 	{
 		if (s.count(*iter))
 			str1.erase(iter);
+		else
+			++iter;
 	}
 	return str1;
 }
