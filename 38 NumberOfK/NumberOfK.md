@@ -17,7 +17,7 @@ int GetFirstK(int* data, int length, int k, int start, int end)
     int middleData = data[middleIndex];
     if (middleData == k)
     {
-        if ((middleIndex > 0 && data[middleIndex - 1] != k) || middleIndex = 0)
+        if ((middleIndex > 0 && data[middleIndex - 1] != k) || middleIndex == 0)
             return middleIndex;
         else
             end = middleIndex - 1;
