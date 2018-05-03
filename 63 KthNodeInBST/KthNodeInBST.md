@@ -30,3 +30,28 @@ BinaryTreeNode* KthNodeCore(BinaryTreeNode* pRoot, unsigned int k)
     return target;
 }
 ```
+
+```C++
+class Solution {
+public:
+    TreeNode* KthNode(TreeNode* pRoot, int k)
+    {
+        if (pRoot == NULL || k == 0)
+            return NULL;
+        vector<TreeNode*> res;
+        dfs(pRoot, res);
+        if (k > res.size())
+            return NULL;
+        return res[k-1];
+    }
+    void dfs(TreeNode* root, vector<TreeNode*>& res)
+    {
+        if (root == NULL)
+            return;
+        dfs(root->left, res);
+        res.push_back(root);
+        dfs(root->right, res);
+    }
+};
+
+```
